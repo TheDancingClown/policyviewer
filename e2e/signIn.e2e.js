@@ -13,11 +13,9 @@ describe('Logging In', () => {
     await element(by.id('password')).tap();
     await element(by.id('password')).typeText('secret');
     await element(by.id('signInBtn')).tap();
-    await expect(element(by.id('header'))).toBeVisible();
     await expect(element(by.id('policyRef'))).toBeVisible();
     await expect(element(by.id('coverType'))).toBeVisible();
     await expect(element(by.id('car'))).toBeVisible();
     await expect(element(by.id('address'))).toBeVisible();
-
   });
 });

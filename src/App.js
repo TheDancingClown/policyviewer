@@ -11,9 +11,17 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Sign In" component={SignInScreen} />
-        <Stack.Screen name="CustomerScreen" component={CustomerScreen} />
+      <Stack.Navigator
+      screenOptions={{headerTitleAlign: 'left',}}>
+        <Stack.Screen 
+        name="Sign In" 
+        component={SignInScreen} 
+        />
+        <Stack.Screen 
+        name="CustomerScreen"
+        options={{ title: 'My Policy', headerLeft: null,}}
+        component={CustomerScreen} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

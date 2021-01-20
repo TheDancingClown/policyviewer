@@ -5,9 +5,6 @@ const CustomerScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text testID='header'>My Policy</Text>
-      </View>
       <View style={styles.details}>
         <Text testID='policyRef'>Policy reference:</Text>
         <Text testID='coverType'>Cover type:</Text>
