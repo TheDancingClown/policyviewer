@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
-const SignInScreen = () => {
+
+const SignInScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
@@ -15,7 +16,8 @@ const SignInScreen = () => {
         placeholder='password'
         testID='password'/>
         <TouchableOpacity
-        testID='loginBtn'>
+        testID='loginBtn'
+        onPress={() => navigation.navigate('CustomerScreen')}>
           <Text>Login</Text>
         </TouchableOpacity>
       </View>
