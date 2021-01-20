@@ -7,8 +7,17 @@ describe('Logging In', () => {
     await device.reloadReactNative();
   });
 
-  it('should have an email field', async () => {
-    await expect(element(by.text('email'))).toBeVisible();
+  it('navigates to the policy page on login', async () => {
+    await element(by.id('email')).tap();
+    await element(by.id('email')).typeText('test@test.com') 
+    //enter email
+    await element(by.id('password')).tap();
+    await element(by.id('password')).typeText('secret') 
+    //enter password
+    await element(by.id('loginBtn')).tap()
+    //click login
+
+    //navigates to new page
   });
 
   // it('should show hello screen after tap', async () => {

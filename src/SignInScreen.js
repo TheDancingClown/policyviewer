@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, View, StyleSheet, TextInput } from 'react-native'
+import React from 'react';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 const SignInScreen = () => {
 
@@ -8,8 +8,16 @@ const SignInScreen = () => {
       <View style={styles.footer}>
         <Text>Email:</Text>
         <TextInput
-        testID='email'
-        placeholder='email'/>
+        placeholder='email'
+        testID='email'/>
+        <Text>Password:</Text>
+        <TextInput
+        placeholder='password'
+        testID='password'/>
+        <TouchableOpacity
+        testID='loginBtn'>
+          <Text>Login</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

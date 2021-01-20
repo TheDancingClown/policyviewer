@@ -5,7 +5,7 @@ import SignInScreen from './SignInScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <SignInScreen />
+      <SignInScreen testID='login'/>
     </View>
   );
 }
