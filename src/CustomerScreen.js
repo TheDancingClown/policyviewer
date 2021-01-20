@@ -6,7 +6,11 @@ const CustomerScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.footer}>
-        <Text testID='welcome'>Welcome</Text>
+        <Text testID='header'>My Policy</Text>
+        <Text testID='policyRef'>Policy reference:</Text>
+        <Text testID='coverType'>Cover type:</Text>
+        <Text testID='car'>Car:</Text>
+        <Text testID='address'>Address:</Text>
       </View>
     </View>
   );

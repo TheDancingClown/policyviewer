@@ -7,18 +7,18 @@ const SignInScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.footer}>
-        <Text>Email:</Text>
+        <Text>User Name:</Text>
         <TextInput
-        placeholder='email'
-        testID='email'/>
+        placeholder='username'
+        testID='username'/>
         <Text>Password:</Text>
         <TextInput
         placeholder='password'
         testID='password'/>
         <TouchableOpacity
-        testID='loginBtn'
+        testID='signInBtn'
         onPress={() => navigation.navigate('CustomerScreen')}>
-          <Text>Login</Text>
+          <Text>Sign in</Text>
         </TouchableOpacity>
       </View>
     </View>
