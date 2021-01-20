@@ -14,7 +14,8 @@ export default function App() {
       <Stack.Navigator
       screenOptions={{headerTitleAlign: 'left',}}>
         <Stack.Screen 
-        name="Sign In" 
+        name="SignInScreen"
+        options={{ title: "Sign in"}}
         component={SignInScreen} 
         />
         <Stack.Screen 
