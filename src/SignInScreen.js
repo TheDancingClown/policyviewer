@@ -6,21 +6,12 @@ const SignInScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const signIn = async (username, password) => {
-    // const sessionData = await getSessionData(username, password)
-    const sessionData = {
-      "username":"Ana.Hodkiewicz",
-      "session":"yJraWQiOiJweUs2RHhFak05SXhnU3",
-      "type":"USER_PASSWORD_AUTH",
-      "code":"116567",
-      "access_token":"MuYW1hem9uYXdzLmNvbVwvZXUtd2VzdC0zX3JkdldSMGs",
-      "refresh_token":"MuYW1hem9uYXdzLmNvbVwvZXUtd2VzdC0zX3JkdldSMGs"
-    }
-    await navigation.navigate('CustomerScreen', {
-      access_token: sessionData.access_token
-    })
+    const sessionData = await _getSessionData(username, password)
+    const policy = await _getPolicyData(sessionData.access_token)
+    await navigation.navigate('CustomerScreen', policy)
   }
-
-  const getSessionData = async (username, password) => {
+   
+  const _getSessionData = async (username, password) => {
     try {
       let response = await fetch('https://api.bybits.co.uk/auth/token', {
         method: 'POST',
@@ -33,6 +24,23 @@ const SignInScreen = ({ navigation }) => {
           "password": password,
           "type": "USER_PASSWORD_AUTH"
         })
+      });
+      let json = await response.json();
+      return json;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const _getPolicyData = async (token) => {
+    try {
+      let response = await fetch('https://api.bybits.co.uk/policys/details', {
+        method: 'GET',
+        headers: {
+          "environment": "mock",
+          "Authorisation": `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
       });
       let json = await response.json();
       return json;
