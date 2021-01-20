@@ -6,7 +6,7 @@ const SignInScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.footer}>
+      <View style={styles.form}>
         <Text>User Name:</Text>
         <TextInput
         placeholder='username'
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  footer: {
+  form: {
     justifyContent: 'center',
     alignItems: 'center',
     flex: 3

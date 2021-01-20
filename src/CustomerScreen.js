@@ -5,8 +5,10 @@ const CustomerScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.footer}>
+      <View style={styles.header}>
         <Text testID='header'>My Policy</Text>
+      </View>
+      <View style={styles.details}>
         <Text testID='policyRef'>Policy reference:</Text>
         <Text testID='coverType'>Cover type:</Text>
         <Text testID='car'>Car:</Text>
@@ -19,12 +21,12 @@ const CustomerScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     backgroundColor: 'lightblue',
     alignItems: 'center',
     justifyContent: 'center'
   },
-  footer: {
+  details: {
     justifyContent: 'center',
     alignItems: 'center',
     flex: 3
