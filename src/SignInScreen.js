@@ -66,12 +66,15 @@ const SignInScreen = ({ navigation }) => {
           style={styles.textInput}
           placeholder='password'
           autoCapitalize='none'
-          secureTextEntry='true'
-          onChangeText={(password) => setPassword(password)}
+          secureTextEntry={true}
+          onChangeText={(password) => {
+            return setPassword(password);
+          }}
           testID='password'
         />
         <TouchableOpacity
           style={styles.signInBtn}
+          disabled={!(username && password)}
           onPress={() => signIn(username, password)}
           testID='signInBtn'
         >
