@@ -1,4 +1,4 @@
-{
+const MockPolicy = {
   "policy": {
     "compulsory_excess":100,
     "voluntary_excess":100,
@@ -137,4 +137,6 @@
       "mta_fee":20,
       "cancel_fee":50
     }
-  }
+  };
+
+  export default MockPolicy;
