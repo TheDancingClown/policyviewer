@@ -68,7 +68,7 @@ const SignInScreen = ({ navigation }) => {
           autoCapitalize='none'
           secureTextEntry={true}
           onChangeText={(password) => {
-            return setPassword(password);
+            return setPassword(password); 
           }}
           testID='password'
         />

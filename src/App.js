@@ -22,7 +22,7 @@ export default function App() {
         />
         <Stack.Screen 
         name="CustomerScreen"
-        options={{ title: 'My Policy', headerLeft: null,}}
+        options={{ title: 'My Policy', headerLeft: null}}
         component={CustomerScreen} 
         />
       </Stack.Navigator>

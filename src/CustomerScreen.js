@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import CategoryDisplay from '../components/CategoryDisplay'
+import CategoryDisplay from '../components/CategoryDisplay';
 
 const CustomerScreen = ({ route }) => {
   
-  const { policy, vehicle } = route.params
+  const { policy, vehicle } = route.params;
 
-  const capitalise = (s) => {
+  const _capitalise = (s) => {
     return s.charAt(0).toUpperCase() + s.slice(1)
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -25,7 +25,7 @@ const CustomerScreen = ({ route }) => {
       />
       <CategoryDisplay 
         subHeading='Car:'
-        detail={`${capitalise(vehicle.make)} ${capitalise(vehicle.model)} ${capitalise(vehicle.colour)} -${vehicle.reg}`}
+        detail={`${_capitalise(vehicle.make)} ${_capitalise(vehicle.model)} ${_capitalise(vehicle.colour)} -${vehicle.reg}`}
         testID='car'
       />
       <CategoryDisplay 

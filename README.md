@@ -29,7 +29,7 @@ App has been run on android phone, iOS simulator (iPhone 11) and web but not spe
 ### Testing
 
 Spent a lot of time setting up testing environment as I wanted to practice TDD in React Native.  
-TDD driven by the end to end Detox test user the wireframe as a guideline.   
+TDD driven by the end to end Detox test using the wireframe as a guideline.   
 Jest used for testing component and screen rendering.
 
 ### Time
@@ -37,7 +37,7 @@ Jest used for testing component and screen rendering.
 Approx. 10 hours total:  
 5 hours spent setting up testing environment. Detox configuration especially caused a few issues and git stashes as I found the documentation to be slightly different to requirement.  
 1 hour spent blocked/debugging passing parameters via navigation stack (hadn't destructured parameter).  
-1 spent trying to render CustomerScreen component in testing due to undefined parameters.  
+1 hour spent trying to render CustomerScreen component in testing due to undefined parameters.  
 
 ### Dependencies
 
