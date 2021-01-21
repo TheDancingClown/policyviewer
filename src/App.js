@@ -11,10 +11,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      screenOptions={{headerTitleAlign: 'left',}}>
+      screenOptions={{
+        headerTitleAlign: 'left',
+        headerTitleStyle: {
+          fontWeight: 'bold'}}}>
         <Stack.Screen 
         name="SignInScreen"
-        options={{ title: "Sign in"}}
+        options={{ title: "Sign In"}}
         component={SignInScreen} 
         />
         <Stack.Screen 

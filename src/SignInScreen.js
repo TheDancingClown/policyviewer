@@ -9,7 +9,7 @@ const SignInScreen = ({ navigation }) => {
     const sessionData = await _getSessionData(username, password)
     const policy = await _getPolicyData(sessionData.access_token)
     await navigation.navigate('CustomerScreen', policy)
-  }
+  };
    
   const _getSessionData = async (username, password) => {
     try {
@@ -30,7 +30,7 @@ const SignInScreen = ({ navigation }) => {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   const _getPolicyData = async (token) => {
     try {
@@ -47,26 +47,35 @@ const SignInScreen = ({ navigation }) => {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   return (
     <View style={styles.container}>
+      <View style={styles.underline}/>
       <View style={styles.form}>
-        <Text>User Name:</Text>
+        <Text style={styles.text}>User Name:</Text>
         <TextInput
-        placeholder='username'
-        onChangeText={(username) => setUsername(username)}
-        testID='username'/>
-        <Text>Password:</Text>
+          style={styles.textInput}
+          placeholder='username'
+          autoCapitalize='none'
+          onChangeText={(username) => setUsername(username)}
+          testID='username'
+        />
+        <Text style={styles.text}>Password:</Text>
         <TextInput
-        placeholder='password'
-        onChangeText={(password) => setPassword(password)}
-        testID='password'/>
+          style={styles.textInput}
+          placeholder='password'
+          autoCapitalize='none'
+          secureTextEntry='true'
+          onChangeText={(password) => setPassword(password)}
+          testID='password'
+        />
         <TouchableOpacity
-        testID='signInBtn'
-        onPress={() => signIn(username, password)
-        }>
-          <Text>Sign in</Text>
+          style={styles.signInBtn}
+          onPress={() => signIn(username, password)}
+          testID='signInBtn'
+        >
+          <Text style={styles.text}>Sign in</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -75,16 +84,34 @@ const SignInScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'lightblue',
-    alignItems: 'center',
-    justifyContent: 'center'
+  
+  },
+  underline: {
+    borderWidth: 2,
+    borderColor: 'lightblue',
   },
   form: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 3
+    margin: 20
+  },
+  text: {
+    fontSize: 20,
+    margin: 5
+  },
+  textInput: {
+    margin: 5,
+    padding: 10,
+    fontSize: 15,
+    borderColor: 'gray',
+    borderWidth: 1
+  },
+  signInBtn: {
+    margin: 5,
+    marginTop: 20,
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 25,
+    paddingVertical: 5,
+    alignSelf: 'flex-end'
   }
 });
 

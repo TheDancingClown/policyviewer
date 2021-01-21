@@ -12,46 +12,38 @@ const CustomerScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.details}>
-        <CategoryDisplay 
+      <View style={styles.underline}/>
+      <CategoryDisplay 
         subHeading='Policy reference:'
         detail={policy.policy_ref}
         testID='policyRef'
-        />
-        <CategoryDisplay 
+      />
+      <CategoryDisplay 
         subHeading='Cover Type:'
         detail={policy.cover}
         testID='coverType'
-        />
-        <CategoryDisplay 
+      />
+      <CategoryDisplay 
         subHeading='Car:'
         detail={`${capitalise(vehicle.make)} ${capitalise(vehicle.model)} ${capitalise(vehicle.colour)} -${vehicle.reg}`}
         testID='car'
-        />
-        <CategoryDisplay 
+      />
+      <CategoryDisplay 
         subHeading='Address:'
         detail={`${policy.address.line_1}, ${policy.address.line_2}, ${policy.address.postcode}`}
         testID='address'
-        />
-      </View>
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'lightblue',
-    alignItems: 'center',
-    justifyContent: 'center'
+    
   },
-  details: {
-    justifyContent: 'center',
-    flex: 3
-  },
-  title: { 
-    textTransform: 'capitalize'
+  underline: {
+    borderWidth: 2,
+    borderColor: 'lightblue',
   }
 });
 
